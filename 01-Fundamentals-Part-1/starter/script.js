@@ -39,6 +39,7 @@ console.log(myFirstJob);
 //symbol(value that is unique and cannot be changed)
 //Bingint(larger integers than the number type can hold)
 
+/*
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
 
@@ -57,3 +58,23 @@ year = 1991;
 console.log(typeof year);
 
 console.log(typeof null); //object. error in js
+*/
+
+//let: that can change later
+
+let age = 30;
+age = 31;
+
+//const: not change at any point
+
+const birthYear = 1991;
+// birthYear = 1990; //doesn't work
+
+// const job; //doesn't work
+// Use const by default and let if value needs to be changed at some point
+
+var job = "programmer";
+job = "teacher"; //mutate is available
+
+lastName = "Lee"; //it works but always write variable
+console.log(lastName);
