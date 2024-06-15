@@ -164,27 +164,58 @@ console.log(typeof null); //object. error in js
 // console.log(centutry); 
 
 //type converstion: manually convert types
-const inputYear = '1991';
-console.log(Number(inputYear), inputYear);
-console.log(Number(inputYear) + 18); // the original value is not converted
+// const inputYear = '1991';
+// console.log(Number(inputYear), inputYear);
+// console.log(Number(inputYear) + 18); // the original value is not converted
 
-console.log(Number('Jonas')); //NaN invalid number
-console.log(typeof NaN); //number invalid number
+// console.log(Number('Jonas')); //NaN invalid number
+// console.log(typeof NaN); //number invalid number
 
-console.log(String(23), 23);
+// console.log(String(23), 23);
 
-//type coercion: javascript automatically converts type
-//dealing with two values with different types
-console.log('I am ' + 23 + ' years old');
-//we have different type. when we use +  number + string it will be string.
-console.log('23' - '10' -3); 
-//- operator string converted to number
-console.log('23' * '2');
-//* and / change it as number 
+// //type coercion: javascript automatically converts type
+// //dealing with two values with different types
+// console.log('I am ' + 23 + ' years old');
+// //we have different type. when we use +  number + string it will be string.
+// console.log('23' - '10' -3); 
+// //- operator string converted to number
+// console.log('23' * '2');
+// //* and / change it as number 
 
-let n = '1' + 1;//string '11'
-n = n -1; //number 10
-console.log(n);
+// let n = '1' + 1;//string '11'
+// n = n -1; //number 10
+// console.log(n);
 
+//falsy values are values that are not exactly false,
+//but will become false when we try to convert them into boolean.
+// 5 falsy values: 0,'',undefined, null, NaN
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Jonas'));
+console.log(Boolean({}));
+console.log(Boolean(''));
+
+
+
+//javascript coercion for boolean happens 
+//1.when using logical operators
+//2.in a logical context e.g. condition of an if else statement
+
+const money =0;
+if(money){//always have it as boolean 
+    console.log("Don't spend it all");
+}else {
+    console.log('You should get a job!')
+}
+
+let height = 0;
+if(height){
+    console.log('YAY! height is defined')
+}else {
+    console.log('height is undefined')
+}
+
+//logical operator
 
 
