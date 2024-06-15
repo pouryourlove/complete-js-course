@@ -190,32 +190,56 @@ console.log(typeof null); //object. error in js
 //but will become false when we try to convert them into boolean.
 // 5 falsy values: 0,'',undefined, null, NaN
 
-console.log(Boolean(0));
-console.log(Boolean(undefined));
-console.log(Boolean('Jonas'));
-console.log(Boolean({}));
-console.log(Boolean(''));
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean('Jonas'));
+// console.log(Boolean({}));
+// console.log(Boolean(''));
 
 
 
-//javascript coercion for boolean happens 
-//1.when using logical operators
-//2.in a logical context e.g. condition of an if else statement
+// //javascript coercion for boolean happens 
+// //1.when using logical operators
+// //2.in a logical context e.g. condition of an if else statement
 
-const money =0;
-if(money){//always have it as boolean 
-    console.log("Don't spend it all");
-}else {
-    console.log('You should get a job!')
+// const money =0;
+// if(money){//always have it as boolean 
+//     console.log("Don't spend it all");
+// }else {
+//     console.log('You should get a job!')
+// }
+
+// let height = 0;
+// if(height){
+//     console.log('YAY! height is defined')
+// }else {
+//     console.log('height is undefined')
+// }
+
+////logical operator
+
+const age = '18';
+if(age === 18) console.log('You just became an adult! (strict')
+//strict eqaulity operator -> it does not perform type coercion
+//loose equality operator -> it does perform type coercion
+
+if(age == 18) console.log('You just became an adult!(loose)')
+
+//always use strict equality
+
+const favorite = Number(prompt("what's your favorite number?"));
+console.log(favorite);
+console.log(typeof favorite);
+
+if(favorite === 23){
+    console.log('Cool! 23 is an amazing number');
+} else if(favorite === 7){
+    console.log('7 is also a cool number')
+} else if(favorite === 9){
+    console.log('9 is also a cool number')
+} else{
+    console.log('Number is not 23 or 7')
 }
 
-let height = 0;
-if(height){
-    console.log('YAY! height is defined')
-}else {
-    console.log('height is undefined')
-}
-
-//logical operator
-
+if(favorite !== 23) console.log('why not 23?')
 
