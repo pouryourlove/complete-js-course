@@ -144,21 +144,47 @@ console.log(typeof null); //object. error in js
 // multiple
 // lines`);
 
-const age = 15;
+// const age = 15;
 
-if(age >= 18){
-    console.log('Sarah can start driving license 😘')
-} else {
-    const yearsLeft = 18 -age;
-    console.log(`Sarah is too young. Wait another ${yearsLeft} years.`)
-}
+// if(age >= 18){
+//     console.log('Sarah can start driving license 😘')
+// } else {
+//     const yearsLeft = 18 -age;
+//     console.log(`Sarah is too young. Wait another ${yearsLeft} years.`)
+// }
 
-const birthYear = 2012;
+// const birthYear = 2012;
 
-let centutry;
-if(birthYear <= 2000){
-    centutry = 20;
-}else{
-    centutry = 21;
-}
-console.log(centutry); 
+// let centutry;
+// if(birthYear <= 2000){
+//     centutry = 20;
+// }else{
+//     centutry = 21;
+// }
+// console.log(centutry); 
+
+//type converstion: manually convert types
+const inputYear = '1991';
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18); // the original value is not converted
+
+console.log(Number('Jonas')); //NaN invalid number
+console.log(typeof NaN); //number invalid number
+
+console.log(String(23), 23);
+
+//type coercion: javascript automatically converts type
+//dealing with two values with different types
+console.log('I am ' + 23 + ' years old');
+//we have different type. when we use +  number + string it will be string.
+console.log('23' - '10' -3); 
+//- operator string converted to number
+console.log('23' * '2');
+//* and / change it as number 
+
+let n = '1' + 1;//string '11'
+n = n -1; //number 10
+console.log(n);
+
+
+
