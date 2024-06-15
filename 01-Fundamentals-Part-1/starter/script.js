@@ -121,25 +121,44 @@ console.log(typeof null); //object. error in js
 // const averageAge = (ageJonas + ageSarah)/2;
 // console.log(ageJonas,ageSarah, averageAge);
 
-const firstName = 'Jonas';
-const job='teacher';
-const birthYear = 1991;
-const year=2037;
+// const firstName = 'Jonas';
+// const job='teacher';
+// const birthYear = 1991;
+// const year=2037;
 
-const jonas = "I'm "+ firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
-console.log(jonas);
+// const jonas = "I'm "+ firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+// console.log(jonas);
 
 //templete string: assemble multiple pieces into one final string
 
-const jonasNew = `I'm ${firstName}, a ${year-birthYear} years old ${job}!`;
-console.log(jonasNew)
+// const jonasNew = `I'm ${firstName}, a ${year-birthYear} years old ${job}!`;
+// console.log(jonasNew)
 
-console.log(`Just a regular string...`);
+// console.log(`Just a regular string...`);
 
-console.log('String with \n\
-multiple \n\
-lines ');
+// console.log('String with \n\
+// multiple \n\
+// lines ');
 
-console.log(`String 
-multiple
-lines`);
+// console.log(`String 
+// multiple
+// lines`);
+
+const age = 15;
+
+if(age >= 18){
+    console.log('Sarah can start driving license 😘')
+} else {
+    const yearsLeft = 18 -age;
+    console.log(`Sarah is too young. Wait another ${yearsLeft} years.`)
+}
+
+const birthYear = 2012;
+
+let centutry;
+if(birthYear <= 2000){
+    centutry = 20;
+}else{
+    centutry = 21;
+}
+console.log(centutry); 
