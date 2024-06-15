@@ -108,15 +108,38 @@ console.log(typeof null); //object. error in js
 
 // console.log(now - 1991 > now - 2018);
 
-const now = 2037;
-const ageJonas = now - 1991;
-const ageSarah = now - 2018;
+// const now = 2037;
+// const ageJonas = now - 1991;
+// const ageSarah = now - 2018;
 
-console.log(now - 1991 > now - 2018);
+// console.log(now - 1991 > now - 2018);
 
-let x,y;
-x = y = 25-10-5; // x = y = 10, x= 10
-console.log(x,y);
+// let x,y;
+// x = y = 25-10-5; // x = y = 10, x= 10
+// console.log(x,y);
 
-const averageAge = (ageJonas + ageSarah)/2;
-console.log(ageJonas,ageSarah, averageAge);
+// const averageAge = (ageJonas + ageSarah)/2;
+// console.log(ageJonas,ageSarah, averageAge);
+
+const firstName = 'Jonas';
+const job='teacher';
+const birthYear = 1991;
+const year=2037;
+
+const jonas = "I'm "+ firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+console.log(jonas);
+
+//templete string: assemble multiple pieces into one final string
+
+const jonasNew = `I'm ${firstName}, a ${year-birthYear} years old ${job}!`;
+console.log(jonasNew)
+
+console.log(`Just a regular string...`);
+
+console.log('String with \n\
+multiple \n\
+lines ');
+
+console.log(`String 
+multiple
+lines`);
