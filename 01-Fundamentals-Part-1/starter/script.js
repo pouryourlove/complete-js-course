@@ -140,7 +140,7 @@ console.log(typeof null); //object. error in js
 // multiple \n\
 // lines ');
 
-// console.log(`String 
+// console.log(`String
 // multiple
 // lines`);
 
@@ -161,7 +161,7 @@ console.log(typeof null); //object. error in js
 // }else{
 //     centutry = 21;
 // }
-// console.log(centutry); 
+// console.log(centutry);
 
 //type converstion: manually convert types
 // const inputYear = '1991';
@@ -177,10 +177,10 @@ console.log(typeof null); //object. error in js
 // //dealing with two values with different types
 // console.log('I am ' + 23 + ' years old');
 // //we have different type. when we use +  number + string it will be string.
-// console.log('23' - '10' -3); 
+// console.log('23' - '10' -3);
 // //- operator string converted to number
 // console.log('23' * '2');
-// //* and / change it as number 
+// //* and / change it as number
 
 // let n = '1' + 1;//string '11'
 // n = n -1; //number 10
@@ -196,14 +196,12 @@ console.log(typeof null); //object. error in js
 // console.log(Boolean({}));
 // console.log(Boolean(''));
 
-
-
-// //javascript coercion for boolean happens 
+// //javascript coercion for boolean happens
 // //1.when using logical operators
 // //2.in a logical context e.g. condition of an if else statement
 
 // const money =0;
-// if(money){//always have it as boolean 
+// if(money){//always have it as boolean
 //     console.log("Don't spend it all");
 // }else {
 //     console.log('You should get a job!')
@@ -218,28 +216,54 @@ console.log(typeof null); //object. error in js
 
 ////logical operator
 
-const age = '18';
-if(age === 18) console.log('You just became an adult! (strict')
-//strict eqaulity operator -> it does not perform type coercion
-//loose equality operator -> it does perform type coercion
+// const age = '18';
+// if(age === 18) console.log('You just became an adult! (strict')
+// //strict eqaulity operator -> it does not perform type coercion
+// //loose equality operator -> it does perform type coercion
 
-if(age == 18) console.log('You just became an adult!(loose)')
+// if(age == 18) console.log('You just became an adult!(loose)')
 
-//always use strict equality
+// //always use strict equality
 
-const favorite = Number(prompt("what's your favorite number?"));
-console.log(favorite);
-console.log(typeof favorite);
+// const favorite = Number(prompt("what's your favorite number?"));
+// console.log(favorite);
+// console.log(typeof favorite);
 
-if(favorite === 23){
-    console.log('Cool! 23 is an amazing number');
-} else if(favorite === 7){
-    console.log('7 is also a cool number')
-} else if(favorite === 9){
-    console.log('9 is also a cool number')
-} else{
-    console.log('Number is not 23 or 7')
-}
+// if(favorite === 23){
+//     console.log('Cool! 23 is an amazing number');
+// } else if(favorite === 7){
+//     console.log('7 is also a cool number')
+// } else if(favorite === 9){
+//     console.log('9 is also a cool number')
+// } else{
+//     console.log('Number is not 23 or 7')
+// }
 
-if(favorite !== 23) console.log('why not 23?')
+// if(favorite !== 23) console.log('why not 23?')
+
+const hasDriversLicense = true; //A
+const hasGoodVision = true; //B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// if (shouldDrive) {
+//   console.log("Sarah is able to drive!");
+// } else {
+//   console.log("Someone else should drive ... ");
+// }
+
+const isTired = false; //C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log("Sarah is able to drive!");
+  } else {
+    console.log("Someone else should drive ... ");
+  }
+
+
 
