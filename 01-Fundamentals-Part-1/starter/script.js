@@ -306,15 +306,36 @@ const day = 'wednesday';
 // }
 
 //expression is a piece of code that produces a value
-3 + 4
-1991
-true && false && !false
-//statement is like a bigger piece of code that is executed and which does not produce the value itself
+// 3 + 4
+// 1991
+// true && false && !false
+// //statement is like a bigger piece of code that is executed and which does not produce the value itself
 
-if(23 > 10){
-    const str = '23 is bigger';
+// if(23 > 10){
+//     const str = '23 is bigger';
+// }
+
+// //doesn't produce the value 
+
+// console.log(`I'm ${2037-1991}years old.`)
+
+const age = 23;
+// age >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water')
+
+const drink = age >=18 ? 'wine' : 'water';
+console.log(drink);
+
+let drink2;
+if(age >= 18){
+    drink2 = 'wine';
+}else {
+    drink2 = 'water';
 }
 
-//doesn't produce the value 
+console.log(drink2);
 
-console.log(`I'm ${2037-1991}years old.`)
+console.log(`I like to drink ${drink}`);
+
+//when we need to make a quick decision
+
+
