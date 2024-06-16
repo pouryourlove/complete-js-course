@@ -290,17 +290,31 @@ const day = 'wednesday';
 //         console.log('not a valid day!')                
 // }
 
-if(day === 'monday'){
-    console.log('Plan course structure');
-    console.log('Go to coding meetup');
-}else if(day ==='tuesday'){
-    console.log('Preapre theory videos');
-} else if(day === 'wednesday' || day === 'thursday'){
-    console.log('Write code examples');
-} else if(day === 'friday'){
-    console.log('Record videos');
-} else if(day === 'saturday' || day === 'sunday'){
-    console.log('enjoy the weekend')  
-} else {
-    console.log('not a valid day!')
+// if(day === 'monday'){
+//     console.log('Plan course structure');
+//     console.log('Go to coding meetup');
+// }else if(day ==='tuesday'){
+//     console.log('Preapre theory videos');
+// } else if(day === 'wednesday' || day === 'thursday'){
+//     console.log('Write code examples');
+// } else if(day === 'friday'){
+//     console.log('Record videos');
+// } else if(day === 'saturday' || day === 'sunday'){
+//     console.log('enjoy the weekend')  
+// } else {
+//     console.log('not a valid day!')
+// }
+
+//expression is a piece of code that produces a value
+3 + 4
+1991
+true && false && !false
+//statement is like a bigger piece of code that is executed and which does not produce the value itself
+
+if(23 > 10){
+    const str = '23 is bigger';
 }
+
+//doesn't produce the value 
+
+console.log(`I'm ${2037-1991}years old.`)
