@@ -241,29 +241,66 @@ console.log(typeof null); //object. error in js
 
 // if(favorite !== 23) console.log('why not 23?')
 
-const hasDriversLicense = true; //A
-const hasGoodVision = true; //B
+// const hasDriversLicense = true; //A
+// const hasGoodVision = true; //B
 
-console.log(hasDriversLicense && hasGoodVision);
-console.log(hasDriversLicense || hasGoodVision);
-console.log(!hasDriversLicense);
+// console.log(hasDriversLicense && hasGoodVision);
+// console.log(hasDriversLicense || hasGoodVision);
+// console.log(!hasDriversLicense);
 
-const shouldDrive = hasDriversLicense && hasGoodVision;
+// const shouldDrive = hasDriversLicense && hasGoodVision;
 
-// if (shouldDrive) {
-//   console.log("Sarah is able to drive!");
-// } else {
-//   console.log("Someone else should drive ... ");
+// // if (shouldDrive) {
+// //   console.log("Sarah is able to drive!");
+// // } else {
+// //   console.log("Someone else should drive ... ");
+// // }
+
+// const isTired = false; //C
+// console.log(hasDriversLicense && hasGoodVision && isTired);
+
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//     console.log("Sarah is able to drive!");
+//   } else {
+//     console.log("Someone else should drive ... ");
+//   }
+
+const day = 'wednesday';
+
+// switch(day){
+//     case 'monday': // day === 'monday'
+//         console.log('Plan course structure');
+//         console.log('Go to coding meetup');
+//         break;
+//     case 'tuesday':
+//         console.log('Preapre theory videos');
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('Write code examples');
+//         break;
+//     case 'friday':
+//         console.log('Record videos');
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log('enjoy the weekend')  ;
+//         break; 
+//     default: 
+//         console.log('not a valid day!')                
 // }
 
-const isTired = false; //C
-console.log(hasDriversLicense && hasGoodVision && isTired);
-
-if (hasDriversLicense && hasGoodVision && !isTired) {
-    console.log("Sarah is able to drive!");
-  } else {
-    console.log("Someone else should drive ... ");
-  }
-
-
-
+if(day === 'monday'){
+    console.log('Plan course structure');
+    console.log('Go to coding meetup');
+}else if(day ==='tuesday'){
+    console.log('Preapre theory videos');
+} else if(day === 'wednesday' || day === 'thursday'){
+    console.log('Write code examples');
+} else if(day === 'friday'){
+    console.log('Record videos');
+} else if(day === 'saturday' || day === 'sunday'){
+    console.log('enjoy the weekend')  
+} else {
+    console.log('not a valid day!')
+}
