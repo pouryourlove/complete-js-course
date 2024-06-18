@@ -42,19 +42,34 @@
 //parameter is like a placeholder
 //argument is a real value we want to put in the placeholder
 
-function calcAge1(birthYear) {
-  return 2037 - birthYear;
-}
-const age1 = calcAge1(1991);
+// function calcAge1(birthYear) {
+//   return 2037 - birthYear;
+// }
+// const age1 = calcAge1(1991);
 
 //function expression
-const calcAge2 = function (birthYear) {
-  return 2037 - birthYear;
-};
+// const calcAge2 = function (birthYear) {
+//   return 2037 - birthYear;
+// };
 
-//expression produces a value
-//function is a value
-const age2 = calcAge2(1991);
-console.log(age1, age2);
+// //expression produces a value
+// //function is a value
+// const age2 = calcAge2(1991);
+// console.log(age1, age2);
 
 //differences : we can call function declariations before they are defined in the code
+
+//Arrow function
+const calcAge3 = (birthyear) => 2037 - birthyear; //special from of function expression
+const age3 = calcAge3(1991);
+console.log(age3);
+
+const yearsUntilRetirement = (birthyear, firstName) => {
+  const age = 2037 - birthyear;
+  const retirement = 65 - age;
+  // return retirement;
+  return `${firstName} retires in ${retirement} years`;
+};
+
+console.log(yearsUntilRetirement(1991, "Jonas"));
+console.log(yearsUntilRetirement(1980, "Bob"));
