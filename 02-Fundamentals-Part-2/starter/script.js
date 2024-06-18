@@ -60,16 +60,53 @@
 //differences : we can call function declariations before they are defined in the code
 
 //Arrow function
-const calcAge3 = (birthyear) => 2037 - birthyear; //special from of function expression
-const age3 = calcAge3(1991);
-console.log(age3);
+// const calcAge3 = (birthyear) => 2037 - birthyear; //special from of function expression
+// const age3 = calcAge3(1991);
+// console.log(age3);
 
-const yearsUntilRetirement = (birthyear, firstName) => {
-  const age = 2037 - birthyear;
-  const retirement = 65 - age;
-  // return retirement;
-  return `${firstName} retires in ${retirement} years`;
+// const yearsUntilRetirement = (birthyear, firstName) => {
+//   const age = 2037 - birthyear;
+//   const retirement = 65 - age;
+//   // return retirement;
+//   return `${firstName} retires in ${retirement} years`;
+// };
+
+// console.log(yearsUntilRetirement(1991, "Jonas"));
+// console.log(yearsUntilRetirement(1980, "Bob"));
+
+// function cutFruitPieces(fruit) {
+//   return fruit * 4;
+// }
+
+// function fruitProcessor(apples, oranges) {
+//   //functions inside the function
+//   const applePieces = cutFruitPieces(apples);
+//   const orangePieces = cutFruitPieces(oranges);
+
+//   const juice = `Juice with ${applePieces} pieces of apple ${orangePieces} pieces of orange`;
+//   return juice;
+// }
+
+// console.log(fruitProcessor(2, 3));
+
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
 };
 
-console.log(yearsUntilRetirement(1991, "Jonas"));
-console.log(yearsUntilRetirement(1980, "Bob"));
+const yearsUntilRetirement = function (birthyear, firstName) {
+  const age = calcAge(birthyear);
+  const retirement = 65 - age;
+
+  if (retirement > 0) {
+    return retirement;
+    console.log(`${firstName} retires in ${retirement} years`);
+  } else {
+    return -1;
+    console.log(`${firstName} has already retired`);
+  }
+};
+
+//return immediately exit the function
+
+console.log(yearsUntilRetirement(1991, "jonas"));
+console.log(yearsUntilRetirement(1950, "Mike"));
