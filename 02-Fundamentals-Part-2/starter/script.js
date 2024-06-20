@@ -120,7 +120,7 @@
 // console.log(friends[2]);
 
 // console.log(friends.length); //not zero based
-// console.log(friends[friends.length - 1]); 
+// console.log(friends[friends.length - 1]);
 // //length is not zero based so we have to -1 to get the last one
 
 // friends[2] = 'Yuuka'
@@ -148,35 +148,76 @@
 // const ages = [age1, age2, age3];
 // //doesn't work. because we can't do number - array
 
-const friends = ["Michael", "Steven", "Peter"];
+// const friends = ["Michael", "Steven", "Peter"];
 
-// Add elements
-const newLength = friends.push('Yuuka');
-console.log(friends);
-console.log(newLength); //return the length
+// // Add elements
+// const newLength = friends.push('Yuuka');
+// console.log(friends);
+// console.log(newLength); //return the length
 
-friends.unshift('Yurika');
-console.log(friends);
+// friends.unshift('Yurika');
+// console.log(friends);
 
 
 
-//Remove elements
-friends.pop();//last 
-const popped = friends.pop(); //return the removed item
-console.log(friends);
-console.log(popped);
+// //Remove elements
+// friends.pop();//last
+// const popped = friends.pop(); //return the removed item
+// console.log(friends);
+// console.log(popped);
 
-friends.shift()//first
-console.log(friends);
+// friends.shift()//first
+// console.log(friends);
 
-console.log(friends.indexOf('Steven'));
-console.log(friends.indexOf('Bob'));
+// console.log(friends.indexOf('Steven'));
+// console.log(friends.indexOf('Bob'));
 
-friends.push(23)
-console.log(friends.includes('Yuuka'));
-console.log(friends.includes('Steven'));
-console.log(friends.includes('23')); //false because it's a different type
+// friends.push(23)
+// console.log(friends.includes('Yuuka'));
+// console.log(friends.includes('Steven'));
+// console.log(friends.includes('23')); //false because it's a different type
 
-if (friends.includes('Steven')) {
-    console.log('You have a friend called Steven')
-}
+// if (friends.includes('Steven')) {
+//     console.log('You have a friend called Steven')
+// }
+
+// object : key value paris
+//property : value
+//order doens't matter unlike arrays
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Lee',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Yuuka', 'Yurika', 'Yoko']
+};
+console.log(jonas);
+
+console.log(jonas.lastName);
+console.log(jonas['lastName']);
+
+const nameKey = 'Name';
+console.log(jonas['first'+ nameKey]);
+console.log(jonas['last' + nameKey]);
+
+//console.log(jonas.'last'+nameKey)
+//when we need to first compute the property name,
+//use bracket notation othertimes, use dot notation
+
+// const interestedIn = prompt('What do you want to know about Jonas? choose between firstName, lastName, age, job, and friends')
+
+// if (jonas[interestedIn]) {
+//     console.log(jonas[interestedIn]);
+// } else {
+//     console.log(`wrong request!`)
+// }
+
+jonas.location = 'Portugal';
+jonas['twitter'] = '@blah';
+console.log(jonas);
+
+//challenge
+//"jonas has 3 friends, and his best friend is called michael"
+
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`)
