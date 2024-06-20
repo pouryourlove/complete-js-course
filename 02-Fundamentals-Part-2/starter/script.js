@@ -89,24 +89,64 @@
 
 // console.log(fruitProcessor(2, 3));
 
+// const calcAge = function (birthYear) {
+//   return 2037 - birthYear;
+// };
+
+// const yearsUntilRetirement = function (birthyear, firstName) {
+//   const age = calcAge(birthyear);
+//   const retirement = 65 - age;
+
+//   if (retirement > 0) {
+//     return retirement;
+//     console.log(`${firstName} retires in ${retirement} years`);
+//   } else {
+//     return -1;
+//     console.log(`${firstName} has already retired`);
+//   }
+// };
+
+// //return immediately exit the function
+
+// console.log(yearsUntilRetirement(1991, "jonas"));
+// console.log(yearsUntilRetirement(1950, "Mike"));
+
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+
+const y = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length); //not zero based
+console.log(friends[friends.length - 1]); 
+//length is not zero based so we have to -1 to get the last one
+
+friends[2] = 'Yuuka'
+console.log(friends);
+//only primitive values are immutable with const
+// frineds = ['Bob','Alice'] //can't replace it with whole new array
+
+const firstName = 'Jonas'
+const jonas = [firstName, 'Lee', 2037 - 1991, 'teacher', friends];
+console.log(jonas);
+
+//exercise
+
 const calcAge = function (birthYear) {
-  return 2037 - birthYear;
-};
+    return 2037 - birthYear;
+}
 
-const yearsUntilRetirement = function (birthyear, firstName) {
-  const age = calcAge(birthyear);
-  const retirement = 65 - age;
+const years = [1991,1967,2002,2010,2018]
 
-  if (retirement > 0) {
-    return retirement;
-    console.log(`${firstName} retires in ${retirement} years`);
-  } else {
-    return -1;
-    console.log(`${firstName} has already retired`);
-  }
-};
+const age1 =calcAge(years[0]);
+const age2 =calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
 
-//return immediately exit the function
+const ages = [age1, age2, age3];
+//doesn't work. because we can't do number - array
 
-console.log(yearsUntilRetirement(1991, "jonas"));
-console.log(yearsUntilRetirement(1950, "Mike"));
+
+
