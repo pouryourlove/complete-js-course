@@ -111,42 +111,72 @@
 // console.log(yearsUntilRetirement(1991, "jonas"));
 // console.log(yearsUntilRetirement(1950, "Mike"));
 
+// const friends = ["Michael", "Steven", "Peter"];
+// console.log(friends);
+
+// const y = new Array(1991, 1984, 2008, 2020);
+
+// console.log(friends[0]);
+// console.log(friends[2]);
+
+// console.log(friends.length); //not zero based
+// console.log(friends[friends.length - 1]); 
+// //length is not zero based so we have to -1 to get the last one
+
+// friends[2] = 'Yuuka'
+// console.log(friends);
+// //only primitive values are immutable with const
+// // frineds = ['Bob','Alice'] //can't replace it with whole new array
+
+// const firstName = 'Jonas'
+// const jonas = [firstName, 'Lee', 2037 - 1991, 'teacher', friends];
+// console.log(jonas);
+
+// //exercise
+
+// const calcAge = function (birthYear) {
+//     return 2037 - birthYear;
+// }
+
+// const years = [1991,1967,2002,2010,2018]
+
+// const age1 =calcAge(years[0]);
+// const age2 =calcAge(years[1]);
+// const age3 = calcAge(years[years.length - 1]);
+// console.log(age1, age2, age3);
+
+// const ages = [age1, age2, age3];
+// //doesn't work. because we can't do number - array
+
 const friends = ["Michael", "Steven", "Peter"];
+
+// Add elements
+const newLength = friends.push('Yuuka');
+console.log(friends);
+console.log(newLength); //return the length
+
+friends.unshift('Yurika');
 console.log(friends);
 
-const y = new Array(1991, 1984, 2008, 2020);
 
-console.log(friends[0]);
-console.log(friends[2]);
 
-console.log(friends.length); //not zero based
-console.log(friends[friends.length - 1]); 
-//length is not zero based so we have to -1 to get the last one
-
-friends[2] = 'Yuuka'
+//Remove elements
+friends.pop();//last 
+const popped = friends.pop(); //return the removed item
 console.log(friends);
-//only primitive values are immutable with const
-// frineds = ['Bob','Alice'] //can't replace it with whole new array
+console.log(popped);
 
-const firstName = 'Jonas'
-const jonas = [firstName, 'Lee', 2037 - 1991, 'teacher', friends];
-console.log(jonas);
+friends.shift()//first
+console.log(friends);
 
-//exercise
+console.log(friends.indexOf('Steven'));
+console.log(friends.indexOf('Bob'));
 
-const calcAge = function (birthYear) {
-    return 2037 - birthYear;
+friends.push(23)
+console.log(friends.includes('Yuuka'));
+console.log(friends.includes('Steven'));
+console.log(friends.includes('23')); //false because it's a different type
+
+if (friends.includes('Steven')) {
+    console.log('You have a friend called Steven')
 }
-
-const years = [1991,1967,2002,2010,2018]
-
-const age1 =calcAge(years[0]);
-const age2 =calcAge(years[1]);
-const age3 = calcAge(years[years.length - 1]);
-console.log(age1, age2, age3);
-
-const ages = [age1, age2, age3];
-//doesn't work. because we can't do number - array
-
-
-
