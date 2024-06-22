@@ -267,45 +267,62 @@
 //   console.log(`Lifting weight repetition ${rep}`);
 // }
 
-const jonas = ['jonas', "Lee", 2037 - 1991, "teacher", ['Michael','Peter','Steven'],true];
+// const jonas = ['jonas', "Lee", 2037 - 1991, "teacher", ['Michael','Peter','Steven'],true];
 
-const types = [];
+// const types = [];
 // console.log(jonas[0])
 // console.log(jonas[1]);
 // ...
 // console.log(jonas[4])
 // jonas[5] does not exist
-for (let i = 0; i < jonas.length; i++){
-  //reading from jonas aarray
-  console.log(jonas[i], typeof jonas[i]);
+// for (let i = 0; i < jonas.length; i++){
+//   //reading from jonas aarray
+//   console.log(jonas[i], typeof jonas[i]);
 
-  //filling types array
-  // types[i] = typeof jonas[i];
-  types.push(typeof jonas[i]);
+//   //filling types array
+//   // types[i] = typeof jonas[i];
+//   types.push(typeof jonas[i]);
   
-}
-console.log(types)
+// }
+// console.log(types)
 
-const years = [1991, 2007, 1969, 2020];
-const ages = [];
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
 
-for (let i = 0; i < years.length; i++){
-  ages.push(2037 - years[i])
-}
-console.log(ages);
+// for (let i = 0; i < years.length; i++){
+//   ages.push(2037 - years[i])
+// }
+// console.log(ages);
 
 // continue and break
 //continue is like skipping
-console.log('----only strings ----')
-for (let i = 0; i < jonas.length; i++) {
-  if (typeof jonas[i] !== 'string') continue;
-  console.log(jonas[i], typeof jonas[i]);
+// console.log('----only strings ----')
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] !== 'string') continue;
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// console.log("----break with number ----");
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] === "number") break;
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+const jonas = [
+  "jonas",
+  "Lee",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+
+for (let i = jonas.length-1; i >= 0; i--){
+  console.log(jonas[i])
 }
 
-console.log("----break with number ----");
-for (let i = 0; i < jonas.length; i++) {
-  if (typeof jonas[i] === "number") break;
-  console.log(jonas[i], typeof jonas[i]);
+for (let exercise = 1; exercise < 4; exercise++){
+  console.log(`------ starting exercise ${exercise}`)
+  for (let rep = 1; rep < 6; rep++){
+    console.log(`Exercise${exercise} : Lifting weight repetition ${rep}`)
+  }
 }
-
-
