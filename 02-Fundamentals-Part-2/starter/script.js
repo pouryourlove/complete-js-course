@@ -308,21 +308,42 @@
 //   console.log(jonas[i], typeof jonas[i]);
 // }
 
-const jonas = [
-  "jonas",
-  "Lee",
-  2037 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-];
+// const jonas = [
+//   "jonas",
+//   "Lee",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
 
-for (let i = jonas.length-1; i >= 0; i--){
-  console.log(jonas[i])
+// for (let i = jonas.length-1; i >= 0; i--){
+//   console.log(jonas[i])
+// }
+
+// for (let exercise = 1; exercise < 4; exercise++){
+//   console.log(`------ starting exercise ${exercise}`)
+//   for (let rep = 1; rep < 6; rep++){
+//     console.log(`Exercise${exercise} : Lifting weight repetition ${rep}`)
+//   }
+// }
+
+// for (let rep = 1; rep <= 10; rep++){
+//   console.log(`Lifting weight repetition ${rep}`);
+// }
+
+//it will run while this condition is true
+
+let rep = 1;
+while (rep <= 10) {
+  // console.log(`Lifting weight repetition ${rep}`);
+  rep++;
 }
 
-for (let exercise = 1; exercise < 4; exercise++){
-  console.log(`------ starting exercise ${exercise}`)
-  for (let rep = 1; rep < 6; rep++){
-    console.log(`Exercise${exercise} : Lifting weight repetition ${rep}`)
-  }
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if(dice === 6) console.log('Loop is about to end...')
 }
