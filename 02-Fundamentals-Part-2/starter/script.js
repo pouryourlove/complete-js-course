@@ -224,13 +224,13 @@
 
 
 
-const jonas = {
-  firstName: "Jonas",
-  lastName: "Lee",
-  birthyear: 1991,
-  job: "teacher",
-  friends: ["Yuuka", "Yurika", "Yoko"],
-  hasDriversLicense: true,
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Lee",
+//   birthyear: 1991,
+//   job: "teacher",
+//   friends: ["Yuuka", "Yurika", "Yoko"],
+//   hasDriversLicense: true,
   // calcAge: function (birthYear) {
   //     return 2037 - birthYear
   // }
@@ -238,24 +238,74 @@ const jonas = {
   //     // console.log(this);
   //     return 2037 - this.birthyear;
   // }
-  calcAge: function () {
-      this.age = 2037 - this.birthyear;
-      return this.age;
-    },
-    getSummary: function () {
-      return `${this.firstName} is a ${this.calcAge()}-years old ${
-        this.job
-      }, and he ${
-        this.hasDriversLicense ? "has a" : "doesn't have a"
-      } driver's license`;
-  }
-};
+//   calcAge: function () {
+//       this.age = 2037 - this.birthyear;
+//       return this.age;
+//     },
+//     getSummary: function () {
+//       return `${this.firstName} is a ${this.calcAge()}-years old ${
+//         this.job
+//       }, and he ${
+//         this.hasDriversLicense ? "has a" : "doesn't have a"
+//       } driver's license`;
+//   }
+// };
 
-console.log(jonas.calcAge());
-console.log(jonas.age);
+// console.log(jonas.calcAge());
+// console.log(jonas.age);
 // console.log(jonas['calcAge'](1991));
 
 // challenge
 //"Jonas is a 46-year old teacher, and he has a driver's licese."
 
-console.log(jonas.getSummary())
+// console.log(jonas.getSummary())
+
+// console.log('Lifting weight repetition 1');
+
+// for loop keeps running while condition is true
+// for (let rep = 1; rep <= 10; rep++){
+//   console.log(`Lifting weight repetition ${rep}`);
+// }
+
+const jonas = ['jonas', "Lee", 2037 - 1991, "teacher", ['Michael','Peter','Steven'],true];
+
+const types = [];
+// console.log(jonas[0])
+// console.log(jonas[1]);
+// ...
+// console.log(jonas[4])
+// jonas[5] does not exist
+for (let i = 0; i < jonas.length; i++){
+  //reading from jonas aarray
+  console.log(jonas[i], typeof jonas[i]);
+
+  //filling types array
+  // types[i] = typeof jonas[i];
+  types.push(typeof jonas[i]);
+  
+}
+console.log(types)
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++){
+  ages.push(2037 - years[i])
+}
+console.log(ages);
+
+// continue and break
+//continue is like skipping
+console.log('----only strings ----')
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] !== 'string') continue;
+  console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log("----break with number ----");
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] === "number") break;
+  console.log(jonas[i], typeof jonas[i]);
+}
+
+
