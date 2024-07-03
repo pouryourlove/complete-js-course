@@ -19,44 +19,40 @@
 // console.log(document.querySelector('.guess').value);
 
 const checkBtn = document.querySelector('.check');
-const message = document.querySelector('.message');
-const scoreBox = document.querySelector('.score');
+const scorePlace = document.querySelector('.score');
 const numberPlace = document.querySelector('.number');
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
-numberPlace.textContent = '?';
-const highscoreDisplay = document.querySelector('.highscore');
-let score = 20;
-let highscore = 0;
+const message = document.querySelector('.message');
+const againBtn = document.querySelector('.again')
+const highscorePlace = document.querySelector('.highscore');
+const randomNumber = Math.trunc(Math.random()*20) + 1
 
-checkBtn.addEventListener('click', function () {
+let score = 20;
+let highScore = 0;
+
+
+checkBtn.addEventListener('click', function(){
     const inputValue = Number(document.querySelector('.guess').value);
-    if (inputValue === '') {
-        message.textContent = 'No number';
-    } else if (inputValue === secretNumber) {
-        message.textContent = 'Correct Number';
-         if (score > highscore) {
-           highscore = score;
-           highscoreDisplay.textContent = highscore;
-         }
-    }  else if (inputValue !== secretNumber) {
-        inputValue > secretNumber ? message.textContent = 'Too high' : message.textContent = 'Too low';
-        score--;
-        if (score > 0) {
-            scoreBox.textContent = score;
-            
-        } else {
-            message.textContent = 'You lost';
-            scoreBox.textContent = '0';
+   
+    if(inputValue === ''){
+        message.textContent = "There is no number"
+    } else if(inputValue === randomNumber){
+        message.textContent = "You got it right!"
+        if(score > highScore){
+            highScore = score;
+            highscorePlace.textContent = highScore;
         }
-    }
+    } else if(inputValue > 0) {
+    inputValue > randomNumber ? message.textContent = "Too high" : message.textContent = "Too low";
+    score --;  
+    scorePlace.textContent = score;
+}
 })
 
-document.querySelector('.again').addEventListener('click', function () {
+
+againBtn.addEventListener('click', function(){
     score = 20;
-    scoreBox.textContent = score;
-    secretNumber = Math.trunc(Math.random() * 20) + 1;
-    message.textContent = 'Start guessing ...'
+    scorePlace.textContent = score;
+    message.textContent = "Start guessing!";
     document.querySelector('.guess').value = '';
-    numberPlace.textContent = '?';
-    
+    numberPlace.textContent = '?'
 })
