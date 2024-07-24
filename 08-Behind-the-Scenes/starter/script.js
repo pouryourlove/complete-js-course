@@ -42,51 +42,71 @@
 // printAge();//cannot access
 
 //variables
-console.log(me); //undefined because it's hoisted with the value of undefined
-console.log(job);//it's in the temporal dead zone(start of the begginning of the current scope until the variable is declared)
-console.log(year);//same as let
+// console.log(me); //undefined because it's hoisted with the value of undefined
+// console.log(job);//it's in the temporal dead zone(start of the begginning of the current scope until the variable is declared)
+// console.log(year);//same as let
 
-var me = 'Jonas';
-let job = 'teacher';
-const year = 1991;
+// var me = 'Jonas';
+// let job = 'teacher';
+// const year = 1991;
 
-//function
+// //function
 
-console.log(addDecl(2,3));//5
-console.log(addExpr(2,3));//error because of temporal dead zone
-console.log(addArrow(2,3));//error because of temporal dead zone
+// console.log(addDecl(2,3));//5
+// console.log(addExpr(2,3));//error because of temporal dead zone
+// console.log(addArrow(2,3));//error because of temporal dead zone
 
 
-function addDecl(a, b) {
-    return a + b;
+// function addDecl(a, b) {
+//     return a + b;
+// }
+
+// const addExpr = function (a, b) {
+//     return a + b
+// }
+
+// const addArrow = (a, b) => a + b;
+
+// //const 대신 var써도 에러메세지 나온다.=>addArrow is not a function
+// //because with var it will be undefined so it's like undefined(2,3)
+
+// //Example
+// console.log(numProducts) //undefined -> falsy value
+// if(!numProducts) deleteShoppingCart();
+
+// var numProducts = 10;
+
+// function deleteShoppingCart() {
+//     console.log('All products deleted'); //all products deleted because of hoisting
+// }
+
+// var x = 1; //create property on the window object
+// let y = 2;
+// const z = 3;
+
+// console.log(x === window.x); //true
+// console.log(y === window.y); //false
+// console.log(z === window.z); //false
+
+
+console.log(this)
+
+const calcAge = function(birthYear){
+    console.log(2037 - birthYear);
+    console.log(this);
 }
+calcAge(1991)
 
-const addExpr = function (a, b) {
-    return a + b
+const calcAgeArrow = (birthYear) => {
+    console.log(2037 - birthYear);
+    console.log(this);
 }
+calcAgeArrow(1980)
 
-const addArrow = (a, b) => a + b;
-
-//const 대신 var써도 에러메세지 나온다.=>addArrow is not a function
-//because with var it will be undefined so it's like undefined(2,3)
-
-//Example
-console.log(numProducts) //undefined -> falsy value
-if(!numProducts) deleteShoppingCart();
-
-var numProducts = 10;
-
-function deleteShoppingCart() {
-    console.log('All products deleted'); //all products deleted because of hoisting
+const jonas = {
+    year: 1991,
+    calcAge: function(){
+        console.log(this)
+    }
 }
-
-var x = 1; //create property on the window object
-let y = 2;
-const z = 3;
-
-console.log(x === window.x); //true
-console.log(y === window.y); //false
-console.log(z === window.z); //false
-
-
-
+jonas.calcAge()
