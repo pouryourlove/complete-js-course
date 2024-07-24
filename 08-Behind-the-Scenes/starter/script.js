@@ -106,7 +106,19 @@ calcAgeArrow(1980)
 const jonas = {
     year: 1991,
     calcAge: function(){
-        console.log(this)
+        console.log(this);
+        console.log(2037 - this.year);
     }
 }
 jonas.calcAge()
+
+const matilda = {
+    year: 2017,
+};
+
+matilda.calcAge = jonas.calcAge
+matilda.calcAge()//this keyword always points to the object that called the method.
+
+
+const f = jonas.calcAge();
+f()//regular function call.isn't attached to any object 
