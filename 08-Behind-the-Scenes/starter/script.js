@@ -89,36 +89,93 @@
 // console.log(z === window.z); //false
 
 
-console.log(this)
+// console.log(this)
 
-const calcAge = function(birthYear){
-    console.log(2037 - birthYear);
-    console.log(this);
-}
-calcAge(1991)
+// const calcAge = function(birthYear){
+//     console.log(2037 - birthYear);
+//     console.log(this);
+// }
+// calcAge(1991)
 
-const calcAgeArrow = (birthYear) => {
-    console.log(2037 - birthYear);
-    console.log(this);
-}
-calcAgeArrow(1980)
+// const calcAgeArrow = (birthYear) => {
+//     console.log(2037 - birthYear);
+//     console.log(this);
+// }
+// calcAgeArrow(1980)
+
+// const jonas = {
+//     year: 1991,
+//     calcAge: function(){
+//         console.log(this);
+//         console.log(2037 - this.year);
+//     }
+// }
+// jonas.calcAge()
+
+// const matilda = {
+//     year: 2017,
+// };
+
+// matilda.calcAge = jonas.calcAge
+// matilda.calcAge()//this keyword always points to the object that called the method.
+
+
+// const f = jonas.calcAge();
+// f()//regular function call.isn't attached to any object
+
+var firstName = 'Matilda'
 
 const jonas = {
-    year: 1991,
-    calcAge: function(){
-        console.log(this);
-        console.log(2037 - this.year);
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+      console.log(2037 - this.year);
+      
+      //solution 1
+    //   const self = this; //self or that
+    //   const isMillenial = function () {
+    //     console.log(self); //jonas object
+    //     console.log(this); //undefined
+    //     console.log(this.year >= 1981 && this.year <= 1996);
+      //   };
+      
+      //solution 2
+      const isMillenial = () => {
+        console.log(self); //jonas object
+        console.log(this); //undefined
+        console.log(this.year >= 1981 && this.year <= 1996);
+      };
+      isMillenial()//regular function call
+    },
+  
+    greet: () => {
+      console.log(this); //window object
+      console.log(`Hey ${this.firstName}`);//Hey Matilda 
+      //parent scope is a global scope
     }
-}
-jonas.calcAge()
 
-const matilda = {
-    year: 2017,
+    //never make arrow function as a method
+  
 };
 
-matilda.calcAge = jonas.calcAge
-matilda.calcAge()//this keyword always points to the object that called the method.
+jonas.greet();//undefined
+console.log(this.firstName) //undefined
+jonas.calcAge(); 
 
+//argument keyword is only avaiable for regular function
 
-const f = jonas.calcAge();
-f()//regular function call.isn't attached to any object 
+const addExpr = function (a, b) {
+    console.log(arguments)
+    return a+b
+}
+
+addExpr(2, 5);
+addExpr(2,5, 8, 12)
+
+const addArrow = (a, b) => {
+    console.log(arguments);
+    return a + b
+}
+
+addArrow(2, 5, 8);
