@@ -180,19 +180,60 @@
 
 // addArrow(2, 5, 8);
 
-let age = 30;
-let oldAge = age;
-age =31;
-console.log(age); //31
-console.log(oldAge); //30
+// let age = 30;
+// let oldAge = age;
+// age =31;
+// console.log(age); //31
+// console.log(oldAge); //30
 
-const me = {
-    name: 'Yuuka',
-    age: 28.
+// const me = {
+//     name: 'Yuuka',
+//     age: 28.
+// };
+
+// const friend = me;
+
+// friend.age = 27;//friend 객체에 있는 age만 바꿨는데도 me 객체에 있는 age도 바뀐다.
+// console.log('Friend:',friend);//{name: 'Yuuka', age: 27}
+// console.log('Me',me)//{name: 'Yuuka', age: 27}
+
+// primitive types
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis'
+console.log(lastName,oldLastName) //Davis Williams
+
+//referene types
+const jessica = {
+    firstName: 'Jessica',
+    lastName: 'Williams',
+    age: 27,
 };
 
-const friend = me;
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage:',jessica)
+console.log('After marriage:', marriedJessica)
+//when copy the object it doesn't create a new object in the heap. 
 
-friend.age = 27;//friend 객체에 있는 age만 바꿨는데도 me 객체에 있는 age도 바뀐다.
-console.log('Friend:',friend);//{name: 'Yuuka', age: 27}
-console.log('Me',me)//{name: 'Yuuka', age: 27}
+// marriedJessica = {} //error
+
+//copying objects
+const jessica2 = {
+    firstName: 'Jessica',
+    lastName: 'Williams',
+    age: 27,
+    family: ['Alice','Bob'],
+};
+//merge two objects into new one
+
+const jessicaCopy = Object.assign({}, jessica2); //new object
+jessicaCopy.lastName = 'Davis'
+
+//shallow copy - only copy the first level...
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+
+console.log('Before marriage:',jessica2)
+console.log('After marriage:', jessicaCopy)
