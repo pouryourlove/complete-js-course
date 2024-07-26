@@ -123,59 +123,76 @@
 // const f = jonas.calcAge();
 // f()//regular function call.isn't attached to any object
 
-var firstName = 'Matilda'
+// var firstName = 'Matilda'
 
-const jonas = {
-  firstName: 'Jonas',
-  year: 1991,
-  calcAge: function () {
-    console.log(this);
-      console.log(2037 - this.year);
+// const jonas = {
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//       console.log(2037 - this.year);
       
-      //solution 1
-    //   const self = this; //self or that
-    //   const isMillenial = function () {
-    //     console.log(self); //jonas object
-    //     console.log(this); //undefined
-    //     console.log(this.year >= 1981 && this.year <= 1996);
-      //   };
+//       //solution 1
+//     //   const self = this; //self or that
+//     //   const isMillenial = function () {
+//     //     console.log(self); //jonas object
+//     //     console.log(this); //undefined
+//     //     console.log(this.year >= 1981 && this.year <= 1996);
+//       //   };
       
-      //solution 2
-      const isMillenial = () => {
-        console.log(self); //jonas object
-        console.log(this); //undefined
-        console.log(this.year >= 1981 && this.year <= 1996);
-      };
-      isMillenial()//regular function call
-    },
+//       //solution 2
+//       const isMillenial = () => {
+//         console.log(self); //jonas object
+//         console.log(this); //undefined
+//         console.log(this.year >= 1981 && this.year <= 1996);
+//       };
+//       isMillenial()//regular function call
+//     },
   
-    greet: () => {
-      console.log(this); //window object
-      console.log(`Hey ${this.firstName}`);//Hey Matilda 
-      //parent scope is a global scope
-    }
+//     greet: () => {
+//       console.log(this); //window object
+//       console.log(`Hey ${this.firstName}`);//Hey Matilda 
+//       //parent scope is a global scope
+//     }
 
-    //never make arrow function as a method
+//     //never make arrow function as a method
   
+// };
+
+// jonas.greet();//undefined
+// console.log(this.firstName) //undefined
+// jonas.calcAge(); 
+
+// //argument keyword is only avaiable for regular function
+
+// const addExpr = function (a, b) {
+//     console.log(arguments)
+//     return a+b
+// }
+
+// addExpr(2, 5);
+// addExpr(2,5, 8, 12)
+
+// const addArrow = (a, b) => {
+//     console.log(arguments);
+//     return a + b
+// }
+
+// addArrow(2, 5, 8);
+
+let age = 30;
+let oldAge = age;
+age =31;
+console.log(age); //31
+console.log(oldAge); //30
+
+const me = {
+    name: 'Yuuka',
+    age: 28.
 };
 
-jonas.greet();//undefined
-console.log(this.firstName) //undefined
-jonas.calcAge(); 
+const friend = me;
 
-//argument keyword is only avaiable for regular function
-
-const addExpr = function (a, b) {
-    console.log(arguments)
-    return a+b
-}
-
-addExpr(2, 5);
-addExpr(2,5, 8, 12)
-
-const addArrow = (a, b) => {
-    console.log(arguments);
-    return a + b
-}
-
-addArrow(2, 5, 8);
+friend.age = 27;//friend 객체에 있는 age만 바꿨는데도 me 객체에 있는 age도 바뀐다.
+console.log('Friend:',friend);//{name: 'Yuuka', age: 27}
+console.log('Me',me)//{name: 'Yuuka', age: 27}
