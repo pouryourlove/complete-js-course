@@ -264,3 +264,10 @@ const [firstBook, secondBook] = books
 const [ , ,thirdBook] = books
 
 const ratings = [['rating', 4.19], ['ratingsCount', 144584]];
+
+const [[, rating], [, ratingsCount]] = ratings
+console.log(rating)
+console.log(ratingsCount)
+
+const ratingStars = [63405, 1808];
+const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars
