@@ -33,8 +33,36 @@ const restaurant = {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`here is your delicious pasta with ${ing1},${ing2},${ing3}`);
   }
 };
+
+//real world exmaple
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1"),
+//   prompt("Ingredient 2?"),
+//   prompt("Ingredient 3?"),
+// ];
+
+// console.log(ingredients);
+ 
+// restaurant.orderPasta(...ingredients);//seperate by commas
+
+//objects
+
+const newRestaurant = {
+  foundedIn: 1998,
+  ...restaurant,
+  founder: 'Guiseppe'
+}
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant }
+restaurantCopy.name = 'Ristorante Roma'
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
 
 restaurant.orderDelivery({
   time: '22:30',
@@ -55,8 +83,8 @@ const { name: restaurantName, openingHours: hours, categories: tags } = restaura
 console.log(restaurantName, hours, tags);
 
 //default values
-const { menu = [], starterMenu: starters = [] } = restaurant
-console.log(menu, starters)
+// const { menu = [], starterMenu: starters = [] } = restaurant
+// console.log(menu, starters)
 
 //mutating variables
 let a = 111;
@@ -84,7 +112,7 @@ console.log(o, c);
 // const c = arr[2];
 
 // const [x, y, z] = arr;
-// console.log(x,y,z); 
+// console.log(x,y,z);
 // console.log(arr); //doesn't destory the original array
 
 // const [first, second] = restaurant.categories;
@@ -93,7 +121,7 @@ console.log(o, c);
 // let [main, , secondary] = restaurant.categories;
 // console.log(main,secondary);
 
-//switching varaibles 
+//switching varaibles
 // const temp = main;
 // main = secondary;
 // secondary = temp;
@@ -105,7 +133,7 @@ console.log(o, c);
 // console.log(restaurant.order(2,0)) //['Garlic Bread', 'Pizza']
 
 // //receive 2 return values from a function
-// const [starter, mainCourse] = restaurant.order(2,0); 
+// const [starter, mainCourse] = restaurant.order(2,0);
 // console.log(starter, mainCourse)
 
 // //nested destructring
@@ -316,3 +344,34 @@ console.log(o, c);
 
 // const ratingStars = [63405, 1808];
 // const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr)
+
+const newArr = [1, 2, ...arr]
+console.log(newArr)
+
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci']
+console.log(newMenu);
+
+//takes all the elements from the array. and it doesn't create new variable
+
+//copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+//iterables: things like all arrays,strings,maps,sets but not object
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.']
+console.log(letters);
+console.log(...str);
+console.log('j', 'o');
+// console.log(`${...str}`); //doesn't work
+//multiple values separated by a comma are usually only expected
+//when we pass arguments into a function or when we build a new array
+
