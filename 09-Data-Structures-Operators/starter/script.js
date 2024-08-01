@@ -36,8 +36,13 @@ const restaurant = {
   },
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`here is your delicious pasta with ${ing1},${ing2},${ing3}`);
+  },
+
+  orderPizza: function (mainIngredient , ...otherIngredients){
+    console.log(mainIngredient)
+    console.log(otherIngredients)
   }
-};
+}
 
 //real world exmaple
 // const ingredients = [
@@ -87,22 +92,22 @@ console.log(restaurantName, hours, tags);
 // console.log(menu, starters)
 
 //mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
 
-({ a, b } = obj); //js expects a code block
-console.log(a,b);
+// ({ a, b } = obj); //js expects a code block
+// console.log(a,b);
 
-//nested objects
+// //nested objects
 
-const { fri: {open,close} } = openingHours
-console.log(open, close);
+// const { fri: {open,close} } = openingHours
+// console.log(open, close);
 
-const {
-  fri: { open: o, close:c },
-} = openingHours;
-console.log(o, c);
+// const {
+//   fri: { open: o, close:c },
+// } = openingHours;
+// console.log(o, c);
 
 
 
@@ -345,33 +350,79 @@ console.log(o, c);
 // const ratingStars = [63405, 1808];
 // const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr)
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr)
 
-const newArr = [1, 2, ...arr]
-console.log(newArr)
+// const newArr = [1, 2, ...arr]
+// console.log(newArr)
 
-console.log(...newArr);
+// console.log(...newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci']
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci']
+// console.log(newMenu);
 
-//takes all the elements from the array. and it doesn't create new variable
+// //takes all the elements from the array. and it doesn't create new variable
 
-//copy array
-const mainMenuCopy = [...restaurant.mainMenu];
+// //copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
 
-//join 2 arrays
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// //join 2 arrays
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-//iterables: things like all arrays,strings,maps,sets but not object
-const str = 'Jonas';
-const letters = [...str, ' ', 'S.']
-console.log(letters);
-console.log(...str);
-console.log('j', 'o');
-// console.log(`${...str}`); //doesn't work
-//multiple values separated by a comma are usually only expected
-//when we pass arguments into a function or when we build a new array
+// //iterables: things like all arrays,strings,maps,sets but not object
+// const str = 'Jonas';
+// const letters = [...str, ' ', 'S.']
+// console.log(letters);
+// console.log(...str);
+// console.log('j', 'o');
+// // console.log(`${...str}`); //doesn't work
+// //multiple values separated by a comma are usually only expected
+// //when we pass arguments into a function or when we build a new array
 
+//1)destructuring
+
+//spread: unpack array into elements
+//rest: pack elements into array
+
+//spread, because on RIGHT side of =
+const arr = [1,2,...[3,4]]
+
+
+//rest, because on LEFT side of =
+const [a,b, ...others] = [1,2,3,4,5]
+console.log(a,b,others)// 1,2,[3,4,5]
+
+
+const [pizza, risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu
+]
+
+console.log(pizza, risotto, otherFood)
+//pizza, risotto, ['Risotto', 'Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad']
+
+//Objects
+const {sat,...weekdays} = restaurant.openingHours;
+console.log(weekdays)
+//fri: {open: 11, close: 23}thu: {open: 12, close: 22}
+
+// 2) functions
+
+const add = function(...numbers){
+  let sum = 0;
+  for(let i=0; i<numbers.length; i++){
+    sum += numbers[i]
+  }
+  console.log(sum)
+}
+
+add(2,3)
+add (5,3,7,2)
+add(8,2,5,3,2,1,4)
+
+const x = [23, 5, 7]
+add(...x)
+
+restaurant.orderPizza('mushrooms','onion','olives','spinach')
+restaurant.orderPizza('mushrooms')
