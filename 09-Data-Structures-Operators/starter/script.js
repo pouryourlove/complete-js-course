@@ -426,3 +426,41 @@ add(...x)
 
 restaurant.orderPizza('mushrooms','onion','olives','spinach')
 restaurant.orderPizza('mushrooms')
+
+//use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'Lingling')//3
+//if the first value is truthy value, it will immidately return the first value
+
+console.log(''|| 'Lingling')//lingling
+console.log(true|| 0)//true
+console.log(undefined|| null)//null
+
+console.log(undefined || 0 || '' || 'hello'||null)//hello
+//first truthy vlaue
+
+// restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests? restaurant.numGuests : 10;
+console.log(guests1)//10 
+
+const guests2 = restaurant.numGuests || 10
+console.log(guests2)
+
+//if the numGuests is 0, the result is 10 so we need to fix it
+
+console.log('----and---')
+
+console.log(0 && 'Lingling') //0
+console.log(7 && 'Lingling') //Lingling 
+
+//if the first value is truthy then we get the last one.
+//if the first value is falsy then we get the first one.
+
+console.log('hello' && 23 && null && 'Lingling')
+
+// practical example
+if(restaurant.orderPizza){
+  restaurant.orderPizza('mushrooms','spinach')
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms','spinach')
+
