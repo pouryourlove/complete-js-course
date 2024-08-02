@@ -806,3 +806,37 @@ console.log(new Set('Lingling').size)
 
 
 //in sets, there is no index. there is no way to getting data out of the sets
+
+//Map: data structure that we can use to map values to keys. map can have any type of key.
+
+const rest = new Map();
+rest.set('name','lingling');
+rest.set(1, 'Hongkong');
+rest.set(2, 'Lisbon');
+
+rest.set('categories',['Italian','Pizzaria','vagetrain'])
+    .set('open', 11)
+    .set('close',23)
+    .set(true,'we are open')
+    .set(false, 'we are closed')
+
+console.log(rest.get('name'))
+console.log(rest.get(true))
+console.log(rest.get(1))
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')))
+
+console.log(rest.has('categories')) //true
+rest.delete(2)
+
+
+const arr = [1,2]
+rest.set(arr,'Test')
+console.log(rest)
+console.log(rest.size)
+// rest.clear()
+
+console.log(rest.get(arr)) //undeifned it's not the same object in the heap
+
+
