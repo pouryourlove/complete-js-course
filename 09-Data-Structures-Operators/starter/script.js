@@ -605,3 +605,15 @@ team1 < team2 && console.log('team1 is more likely to win')
 team1 > team2 && console.log('team2 is more likely to win')
 
 
+const menu = [...restaurant.starterMenu,...restaurant.mainMenu]
+
+for(const item of menu) console.log(item);
+
+// for(const item of menu.entries()){
+//   console.log(item)
+//   console.log(`${item[0] + 1}: ${item[1]}`)
+// }
+
+for(const [i,el] of menu.entries()){
+  console.log(`${i + 1}: ${el}`)
+}
