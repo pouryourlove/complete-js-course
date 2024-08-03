@@ -687,188 +687,241 @@ Your tasks:
 
 GOOD LUCK 😀
 
-*/
+// */
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
-//1.  Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+// //1.  Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
 
-for (const [i,player] of game.scored.entries()){
-    console.log(`Goal ${i+1}: ${player}`)
-}
+// for (const [i,player] of game.scored.entries()){
+//     console.log(`Goal ${i+1}: ${player}`)
+// }
 
-//2.  Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+// //2.  Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
 
-//loop the object
+// //loop the object
 
-const objectValues = Object.values(game.odds)
-console.log(objectValues)
-let sum = 0
-for(const value of objectValues){
-  sum += value
-}
+// const objectValues = Object.values(game.odds)
+// console.log(objectValues)
+// let sum = 0
+// for(const value of objectValues){
+//   sum += value
+// }
 
-console.log(sum / objectValues.length);
+// console.log(sum / objectValues.length);
 
-/*3.  Print the 3 odds to the console, but in a nice formatted way, exactly like this:
-Odd of victory Bayern Munich: 1.33
-Odd of draw: 3.25
-Odd of victory Borrussia Dortmund: 6.5
-Get the team names directly from the game object, don't hardcode them 
-(except for "draw"). Hint: Note how the odds and the game objects have the 
-same property names 😉*/
+// /*3.  Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+// Odd of victory Bayern Munich: 1.33
+// Odd of draw: 3.25
+// Odd of victory Borrussia Dortmund: 6.5
+// Get the team names directly from the game object, don't hardcode them 
+// (except for "draw"). Hint: Note how the odds and the game objects have the 
+// same property names 😉*/
 
-for(const [team,odd] of Object.entries(game.odds)){
-  const teamStr = team === 'x' ? 'draw':`victory ${game[team]}`
-  console.log(`Odd of ${teamStr} ${odd}`)
-}
+// for(const [team,odd] of Object.entries(game.odds)){
+//   const teamStr = team === 'x' ? 'draw':`victory ${game[team]}`
+//   console.log(`Odd of ${teamStr} ${odd}`)
+// }
+
+// /*
+// 4.  Bonus: Create an object called 'scorers' which contains the names of the 
+// players who scored as properties, and the number of goals as the value. In this 
+// game, it will look like this:
+// {
+// Gnarby: 1, 
+// Hummels: 1, 
+// Lewandowski: 2
+// } 
+// */
+
+// const scorers = {};
+// for (const player of game.scored) scorers[player] = scorers[player] + 1 || 1;
+
+// const ordersSet = new Set(['Pasta','Pizza','Pizza','Risotto','Pasta','Pizza'])
+
+// console.log(ordersSet)
+
+// console.log(new Set('Lingling'))
+
+// console.log(ordersSet.size) //3
+// console.log(ordersSet.has('Pizza'))//true
+// console.log(ordersSet.has('Bread'))//false
+// ordersSet.add('Garlic Bread')
+// ordersSet.add('Garlic Bread')
+// ordersSet.delete('Risotto')
+// // ordersSet.clear()
+// console.log(ordersSet);
+
+// for(const order of ordersSet) console.log(order)
+
+// //remove duplicate values of array
+
+// const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
+
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique)
+// //converse set into array
+// console.log(new Set(staff).size)
+
+// console.log(new Set('Lingling').size)
+
+
+// //in sets, there is no index. there is no way to getting data out of the sets
+
+// //Map: data structure that we can use to map values to keys. map can have any type of key.
+
+// const rest = new Map();
+// rest.set('name','lingling');
+// rest.set(1, 'Hongkong');
+// rest.set(2, 'Lisbon');
+
+// rest.set('categories',['Italian','Pizzaria','vagetrain'])
+//     .set('open', 11)
+//     .set('close',23)
+//     .set(true,'we are open')
+//     .set(false, 'we are closed')
+
+// console.log(rest.get('name'))
+// console.log(rest.get(true))
+// console.log(rest.get(1))
+
+// const time = 21;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')))
+
+// console.log(rest.has('categories')) //true
+// rest.delete(2)
+
+
+// const arr = [1,2]
+// rest.set(arr,'Test')
+// console.log(rest)
+// console.log(rest.size)
+// // rest.clear()
+
+// console.log(rest.get(arr)) //undeifned it's not the same object in the heap
+
+// const question = new Map([
+//   ['question','What is the best programming language in the world?'],
+//   [1,'C'],
+//   [2,'Java'],
+//   [3,'Javascript'],
+//   ['correct',3],
+//   [true, 'Correct'],
+//   [false,'Try again!']
+// ])
+
+// console.log(question)
+
+// //Convert Object to map
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap)
+
+// //Quiz app
+
+// console.log(question.get('question'))
+// for(const [key,value] of question){
+//   if(typeof key === 'number') console.log(`Answer ${key}: ${value}`)
+// }
+
+// const answer = Number(prompt('Your answer'));
+// console.log(answer);
+
+// console.log(question.get(question.get('correct') === answer))
+
+// // Convert map to array
+// console.log(([...question]))
+// console.log(question.entries())
+// console.log(...question.keys())
+// console.log(...question.values())
 
 /*
-4.  Bonus: Create an object called 'scorers' which contains the names of the 
-players who scored as properties, and the number of goals as the value. In this 
-game, it will look like this:
-{
-Gnarby: 1, 
-Hummels: 1, 
-Lewandowski: 2
-} 
-*/
+Let's continue with our football betting app! This time, we have a map called
+'gameEvents' (see below) with a log of the events that happened during the
+game. The values are the events themselves, and the keys are the minutes in which
+each event happened (a football game has 90 minutes plus some extra time).
+Your tasks:
+1. Create an array 'events' of the different game events that happened (no
+duplicates)
+2. After the game has finished, is was found that the yellow card from minute 64
+was unfair. So remove this event from the game events log.
+3. Compute and log the following string to the console: "An event happened, on
+average, every 9 minutes" (keep in mind that a game has 90 minutes)
+4. Loop over 'gameEvents' and log each element to the console, marking
+whether it's in the first half or second half (after 45 min) of the game, like this:
+[FIRST HALF] 17: ⚽ GOAL
+*/ 
 
-const scorers = {};
-for (const player of game.scored) scorers[player] = scorers[player] + 1 || 1;
+const gameEvents = new Map([
+  [17, 'GOAL'],
+  [36, 'Substitution'],
+  [47, 'GOAL'],
+  [61, 'Substitution'],
+  [64, 'Yellow card'],
+  [69, 'Red card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, 'GOAL'],
+  [80, 'GOAL'],
+  [92, 'Yellow card'],
+  ]);
 
-const ordersSet = new Set(['Pasta','Pizza','Pizza','Risotto','Pasta','Pizza'])
+  //1. Create an array 'events' of the different game events that happened (no duplicates)
 
-console.log(ordersSet)
+  const events = [...new Set(gameEvents.values())]
 
-console.log(new Set('Lingling'))
+  //2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
 
-console.log(ordersSet.size) //3
-console.log(ordersSet.has('Pizza'))//true
-console.log(ordersSet.has('Bread'))//false
-ordersSet.add('Garlic Bread')
-ordersSet.add('Garlic Bread')
-ordersSet.delete('Risotto')
-// ordersSet.clear()
-console.log(ordersSet);
+gameEvents.delete(64)  
+console.log(gameEvents)
 
-for(const order of ordersSet) console.log(order)
-
-//remove duplicate values of array
-
-const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
-
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique)
-//converse set into array
-console.log(new Set(staff).size)
-
-console.log(new Set('Lingling').size)
-
-
-//in sets, there is no index. there is no way to getting data out of the sets
-
-//Map: data structure that we can use to map values to keys. map can have any type of key.
-
-const rest = new Map();
-rest.set('name','lingling');
-rest.set(1, 'Hongkong');
-rest.set(2, 'Lisbon');
-
-rest.set('categories',['Italian','Pizzaria','vagetrain'])
-    .set('open', 11)
-    .set('close',23)
-    .set(true,'we are open')
-    .set(false, 'we are closed')
-
-console.log(rest.get('name'))
-console.log(rest.get(true))
-console.log(rest.get(1))
-
-const time = 21;
-console.log(rest.get(time > rest.get('open') && time < rest.get('close')))
-
-console.log(rest.has('categories')) //true
-rest.delete(2)
+//3. Compute and log the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
 
 
-const arr = [1,2]
-rest.set(arr,'Test')
-console.log(rest)
-console.log(rest.size)
-// rest.clear()
+console.log(`An event happened, on average, every ${time/gameEvents.size} minutes`)
 
-console.log(rest.get(arr)) //undeifned it's not the same object in the heap
+const time = [...gameEvents.keys().pop()]
+console.log(time)
 
-const question = new Map([
-  ['question','What is the best programming language in the world?'],
-  [1,'C'],
-  [2,'Java'],
-  [3,'Javascript'],
-  ['correct',3],
-  [true, 'Correct'],
-  [false,'Try again!']
-])
-
-console.log(question)
-
-//Convert Object to map
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap)
-
-//Quiz app
-
-console.log(question.get('question'))
-for(const [key,value] of question){
-  if(typeof key === 'number') console.log(`Answer ${key}: ${value}`)
+for(const [min,event] of gameEvents){
+  const half = min <= 45? 'FIRST':'SECOND'
+  console.log(`${half}[ Half ] ${min}: ${event}`)
 }
-
-const answer = Number(prompt('Your answer'));
-console.log(answer);
-
-console.log(question.get(question.get('correct') === answer))
-
-// Convert map to array
-console.log(([...question]))
-console.log(question.entries())
-console.log(...question.keys())
-console.log(...question.values())
