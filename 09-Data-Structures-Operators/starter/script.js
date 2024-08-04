@@ -890,38 +890,226 @@ whether it's in the first half or second half (after 45 min) of the game, like t
 [FIRST HALF] 17: ⚽ GOAL
 */ 
 
-const gameEvents = new Map([
-  [17, 'GOAL'],
-  [36, 'Substitution'],
-  [47, 'GOAL'],
-  [61, 'Substitution'],
-  [64, 'Yellow card'],
-  [69, 'Red card'],
-  [70, 'Substitution'],
-  [72, 'Substitution'],
-  [76, 'GOAL'],
-  [80, 'GOAL'],
-  [92, 'Yellow card'],
-  ]);
+// const gameEvents = new Map([
+//   [17, 'GOAL'],
+//   [36, 'Substitution'],
+//   [47, 'GOAL'],
+//   [61, 'Substitution'],
+//   [64, 'Yellow card'],
+//   [69, 'Red card'],
+//   [70, 'Substitution'],
+//   [72, 'Substitution'],
+//   [76, 'GOAL'],
+//   [80, 'GOAL'],
+//   [92, 'Yellow card'],
+//   ]);
 
-  //1. Create an array 'events' of the different game events that happened (no duplicates)
+//   //1. Create an array 'events' of the different game events that happened (no duplicates)
 
-  const events = [...new Set(gameEvents.values())]
+//   const events = [...new Set(gameEvents.values())]
 
-  //2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
+//   //2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
 
-gameEvents.delete(64)  
-console.log(gameEvents)
+// gameEvents.delete(64)  
+// console.log(gameEvents)
 
-//3. Compute and log the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+// //3. Compute and log the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
 
 
-console.log(`An event happened, on average, every ${time/gameEvents.size} minutes`)
 
-const time = [...gameEvents.keys().pop()]
-console.log(time)
 
-for(const [min,event] of gameEvents){
-  const half = min <= 45? 'FIRST':'SECOND'
-  console.log(`${half}[ Half ] ${min}: ${event}`)
-}
+// // const time = [...gameEvents.keys().pop()]
+// // console.log(time)
+
+// // console.log(`An event happened, on average, every ${time/gameEvents.size} minutes`)
+
+// for(const [min,event] of gameEvents){
+//   const half = min <= 45? 'FIRST':'SECOND'
+//   console.log(`${half}[ Half ] ${min}: ${event}`)
+// }
+
+// const airline = 'TAP air Portugal';
+// const plane = 'A320';
+
+// console.log(plane[0]) //A
+// console.log(plane[1]) //3
+// console.log(plane[2]) //2
+// console.log('B737'[0]) //B
+
+// console.log(airline.length);
+// console.log('B737'.length);
+
+// console.log(airline.indexOf('r'))//6
+// console.log(airline.lastIndexOf('r'))//10
+// console.log(airline.indexOf('Portugal'))
+
+// console.log(airline.slice(4));
+// console.log(airline.slice(4,7));
+
+// console.log(airline.slice(0, airline.indexOf(' ')))//TAP
+// console.log(airline.slice(airline.lastIndexOf(' ')+1))
+
+// console.log(airline.slice(-2))
+// console.log(airline.slice(1, -1))
+
+// const checkMiddleSeat = function(seat){
+//   //B and E are middle seats
+//   const s = seat.slice(-1);
+//   if(s === 'B' || s === 'E'){
+//     console.log('You got the middle seat') }
+//     else {
+//       console.log('You got lucky')
+//     }
+//   }
+
+//   //strings are primitive but when we use method, js automatically change string into object behind the scene
+
+// checkMiddleSeat('11B')
+// checkMiddleSeat('23C')
+// checkMiddleSeat('3E')
+
+//Fix capitalization in name
+// const passenger = 'LiNgLinG'// Lingling
+
+// const lowerCase = passenger.toLowerCase();
+// const slice = lowerCase[0].toUpperCase() + lowerCase.slice(1)
+
+// console.log(slice)
+
+// const email = 'lingling@naver.com';
+// const loginEmail = ' LingLing@naver.Com\n';
+
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(email === normalizedEmail)
+
+// //replacing
+// const annoucement = 'I love you lingling! lingling is the best'
+
+// console.log(annoucement.replace('lingling','zzong')) //앞의 하나만 바뀜
+
+// console.log(annoucement.replaceAll('lingling','zzong'))
+
+// console.log(annoucement.replace(/lingling/g, 'zzong'))
+
+// // Boolean
+// const plane = 'Airbus A320neo';
+// console.log(plane.includes('A320'))
+// console.log(plane.includes('Boeing'))
+// console.log(plane.startsWith('Airb'))
+
+// if(plane.startsWith('Airbus')&& plane.endsWith('neo')){
+//   console.log('Part of the new airbus family')
+// }
+
+// //practice exercise
+
+// const checkBaggage = function(items){
+//   const baggage = items.toLowerCase()
+
+//   if(baggage.includes('knife') || baggage.includes('gun')){
+//     console.log('You are not allowed on board')
+//   } else{
+//     console.log('Welcome aboard!')
+//   }
+// }
+
+// checkBaggage('I have a laptop, some Food and a pocket Knife')
+// checkBaggage('Socks and camera')
+// checkBaggage('Got some snacks and a gun')
+
+// //split and join
+// console.log(
+//   'a+very+nice+string'.split('+')
+// )
+
+// console.log('Zzong Lee'.split(' '))
+
+// const [firstName, lastName] = 'Zzong Lee'.split(' ')
+
+// const newName = ['Miss.', firstName, lastName.toUpperCase().join(' ')]
+// console.log(newName);
+
+// const capitalizeName = function(name){
+//   const names = name.split(' ')
+//   const namesUpper = [];
+
+//   for(const n of names){
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1))
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()))
+//   }
+//   console.log(namesUpper.join(' '))
+// }
+
+// capitalizeName('zzong lee smith davis')
+// capitalizeName('lingling lee')
+
+// const message = 'Go to gate 23';
+// console.log(message.padStart(20,'+').padEnd(30,'+'))
+// console.log('lingling'.padStart(20,'+').padEnd(30,'+'))
+
+// const maskCreditCard = function(number){
+//   const str = number + '' //string으로 변환됨
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*')
+// }
+
+// console.log(maskCreditCard(64637836))
+// console.log(maskCreditCard(12312312445234))
+// console.log(maskCreditCard(32423423523423))
+
+// //Repeat
+
+// const message2 = 'Bad weather...All departures delayed...'
+// console.log(message2.repeat(5))
+
+// const planesInLine = function (n){
+//   console.log(`There are ${n} planes in line ${'plane'.repeat(n)}`)
+// }
+// planesInLine(5)
+// planesInLine(3)
+// planesInLine(12)
+
+
+// Write a program that receives a list of variable names written in underscore_case
+// and convert them to camelCase.
+// The input will come from a textarea inserted into the DOM (see code below to
+// insert the elements), and conversion will happen when the button is pressed.
+// Test data (pasted to textarea, including spaces):
+// underscore_case
+// first_name
+// Some_Variable
+//  calculate_AGE
+// delayed_departure
+// Should produce this output (5 separate console.log outputs):
+// underscoreCase ✅
+// firstName ✅✅
+// someVariable ✅✅✅
+// calculateAge ✅✅✅✅
+// delayedDeparture ✅✅✅✅✅
+// Hints:
+// § Remember which character defines a new line in the textarea �
+// § The solution only needs to work for a variable made out of 2 words, like a_b
+// § Start without worrying about the ✅. Tackle that only after you have the variable
+// name conversion working �
+// § This challenge is difficult on purpose, so start watching the solution in case
+// you're stuck. Then pause and continue!
+// Afterwards, test with your own test data!
+// GOOD LUCK �
+ document.body.append(document.createElement('textarea'));
+ document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function(){
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+
+  for(const [i,row] of rows.entries()){
+    const [first,second] = row.toLowerCase().split('_')
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`
+    console.log(`${output.padEnd(20)}${'✔'.repeat(i+1)}`)
+  }
+})
+
