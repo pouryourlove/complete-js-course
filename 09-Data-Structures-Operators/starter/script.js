@@ -1,92 +1,92 @@
 'use strict';
 
 // Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+// const flights =
+//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-// Data needed for first part of the section
+// // Data needed for first part of the section
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  orderDelivery: function ({starterIndex =1, mainIndex=0,time='20:00',address}) {
-    console.log(
-      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(`here is your delicious pasta with ${ing1},${ing2},${ing3}`);
-  },
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   orderDelivery: function ({starterIndex =1, mainIndex=0,time='20:00',address}) {
+//     console.log(
+//       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(`here is your delicious pasta with ${ing1},${ing2},${ing3}`);
+//   },
 
-  orderPizza: function (mainIngredient , ...otherIngredients){
-    console.log(mainIngredient)
-    console.log(otherIngredients)
-  }
-}
+//   orderPizza: function (mainIngredient , ...otherIngredients){
+//     console.log(mainIngredient)
+//     console.log(otherIngredients)
+//   }
+// }
 
-//real world exmaple
-// const ingredients = [
-//   prompt("Let's make pasta! Ingredient 1"),
-//   prompt("Ingredient 2?"),
-//   prompt("Ingredient 3?"),
-// ];
+// //real world exmaple
+// // const ingredients = [
+// //   prompt("Let's make pasta! Ingredient 1"),
+// //   prompt("Ingredient 2?"),
+// //   prompt("Ingredient 3?"),
+// // ];
 
-// console.log(ingredients);
+// // console.log(ingredients);
  
-// restaurant.orderPasta(...ingredients);//seperate by commas
+// // restaurant.orderPasta(...ingredients);//seperate by commas
 
-//objects
+// //objects
 
-const newRestaurant = {
-  foundedIn: 1998,
-  ...restaurant,
-  founder: 'Guiseppe'
-}
-console.log(newRestaurant);
+// const newRestaurant = {
+//   foundedIn: 1998,
+//   ...restaurant,
+//   founder: 'Guiseppe'
+// }
+// console.log(newRestaurant);
 
-const restaurantCopy = { ...restaurant }
-restaurantCopy.name = 'Ristorante Roma'
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// const restaurantCopy = { ...restaurant }
+// restaurantCopy.name = 'Ristorante Roma'
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del sole, 21',
-  mainIndex: 2,
-  starterIndex:2
-})
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del sole, 21',
+//   mainIndex: 2,
+//   starterIndex:2
+// })
 
-restaurant.orderDelivery({
-  address: 'Via del sole, 21',
-  starterIndex:1
-});
+// restaurant.orderDelivery({
+//   address: 'Via del sole, 21',
+//   starterIndex:1
+// });
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories)
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories)
 
-const { name: restaurantName, openingHours: hours, categories: tags } = restaurant;
-console.log(restaurantName, hours, tags);
+// const { name: restaurantName, openingHours: hours, categories: tags } = restaurant;
+// console.log(restaurantName, hours, tags);
 
 //default values
 // const { menu = [], starterMenu: starters = [] } = restaurant
@@ -621,55 +621,55 @@ GOOD LUCK 😀
 
 // if(restaurant.openingHours && restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open)
 
-//with optional chaining
-console.log(restaurant.openingHours.mon?.open)
-console.log(restaurant.openingHours?.mon?.open)
+// //with optional chaining
+// console.log(restaurant.openingHours.mon?.open)
+// console.log(restaurant.openingHours?.mon?.open)
 
-//only if mon is there then open will be read. otherwise return undefined immidately
+// //only if mon is there then open will be read. otherwise return undefined immidately
 
-//example
-const days = ['mon','tue','wed','thu','fri','sat','sun']
+// //example
+// const days = ['mon','tue','wed','thu','fri','sat','sun']
 
-for(const day of days){
-  const open = restaurant.openingHours[day]?.open ?? 'closed'
-  console.log(`on ${day}, we open at ${open}`)
-}
+// for(const day of days){
+//   const open = restaurant.openingHours[day]?.open ?? 'closed'
+//   console.log(`on ${day}, we open at ${open}`)
+// }
 
-//Methods
-console.log(restaurant.order?.(0,1)?? 'method does not exist')
-console.log(restaurant.orderResotto?.(0,1)?? 'method does not exist')
+// //Methods
+// console.log(restaurant.order?.(0,1)?? 'method does not exist')
+// console.log(restaurant.orderResotto?.(0,1)?? 'method does not exist')
 
-//arrays
-const users = [
-  {name: 'Lingling',
-    email: 'hello@lingling.io'
-  }
-]
+// //arrays
+// const users = [
+//   {name: 'Lingling',
+//     email: 'hello@lingling.io'
+//   }
+// ]
 
-console.log(users[0]?.name ?? 'User array empty ')
+// console.log(users[0]?.name ?? 'User array empty ')
 
-// Property names
-const properties = Object.keys(openingHours)
-console.log(properties)// ['thu', 'fri', 'sat']
+// // Property names
+// const properties = Object.keys(openingHours)
+// console.log(properties)// ['thu', 'fri', 'sat']
 
-let openStr = `we are open on ${properties.length} days:`
-for(const day of properties){
-  openStr += `${day},`
-}
-console.log(openStr)
+// let openStr = `we are open on ${properties.length} days:`
+// for(const day of properties){
+//   openStr += `${day},`
+// }
+// console.log(openStr)
 
-//property values
-const values = Object.values(openingHours)
-console.log(values)
+// //property values
+// const values = Object.values(openingHours)
+// console.log(values)
 
-//Entire object
-const entries = Object.entries(openingHours)
-console.log(entries)
+// //Entire object
+// const entries = Object.entries(openingHours)
+// console.log(entries)
 
-//[key,value]
-for(const [day, {open, close}] of entries){
-  console.log(`On ${day} we open at ${open} and close at ${close}`)
-}
+// //[key,value]
+// for(const [day, {open, close}] of entries){
+//   console.log(`On ${day} we open at ${open} and close at ${close}`)
+// }
 
 // for(const day of Object.keys(openingHours)){
 //   console.log(day);//thu,fri,sat
@@ -1113,3 +1113,18 @@ document.querySelector('button').addEventListener('click', function(){
   }
 })
 
+//string method practice
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+// console.log(flights.split('+'))
+const arrays = flights.split('+')
+
+for (const flight of arrays) {
+  console.log(flight.split(';')[0].replace('_','❤').replace('_',' ') + ' ' + flight.split(';')[1].slice(0,3).toUpperCase() + ' to '+ flight.split(';')[2].slice(0,3).toUpperCase() + ' ' + '('+ flight.split(';')[3].replace(':','h') + ')')
+}
