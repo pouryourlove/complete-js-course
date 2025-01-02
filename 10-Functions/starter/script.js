@@ -102,3 +102,21 @@ document.body.addEventListener('click', high5);
 
 //abstraction is the process of hiding the details and showing only the essentials
 
+// functions returning functions
+
+const greet = function (greeting) {
+    return function (name) {
+        console.log(`${greeting} ${name}`);
+    }
+}
+
+const greeterHey = greet('Hey');
+greeterHey('Lingling');
+greeterHey('Orm');
+
+greet('Hello')('Lingling');
+
+//challenge
+const greetArr = greeting => name => console.log(`${greeting} ${name}`)
+
+greetArr('Hi')('Lingling')
