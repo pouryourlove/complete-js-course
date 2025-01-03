@@ -120,3 +120,62 @@ greet('Hello')('Lingling');
 const greetArr = greeting => name => console.log(`${greeting} ${name}`)
 
 greetArr('Hi')('Lingling')
+
+//set this keyword manually
+
+const lufthansa = {
+    airline: 'Lufthansa',
+    iataCode: 'LH',
+    bookings: [],
+    // book: function(){}
+    book(flightNum, name) {
+        console.log(
+            `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+        );
+        this.bookings.push({flight: `${this.iataCode}${flightNum}`,name})
+    }
+}
+
+lufthansa.book(239, 'Lingling');
+lufthansa.book(635, 'Mint');
+console.log(lufthansa)
+
+const eurowings = {
+    airline: 'Eurowings',
+    iataCode: 'EW',
+    bookings: [],
+}
+
+const book = lufthansa.book;
+
+//does not work
+// book(23, 'Yuuka');
+
+//tell javascript manually what this this keyword should look like
+//call method
+// first one points to the object
+book.call(eurowings, 23, 'Yuuka');
+console.log(eurowings)
+
+book.call(lufthansa, 239, 'Lingling');
+console.log(lufthansa)
+
+const swiss = {
+    airline: 'Swiss Air Lines',
+    iataCode: 'LX',
+    bookings: [],
+}
+
+book.call(swiss, 583, 'Mary Cooper');
+console.log(swiss)
+
+//apply method
+//apply method is similar to call method
+//but it takes an array as an argument
+// it's not used much in modern js
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+console.log(swiss)
+
+book.call(swiss, ...flightData);
+console.log(swiss)
