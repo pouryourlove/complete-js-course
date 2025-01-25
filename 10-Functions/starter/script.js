@@ -18,22 +18,22 @@
 
 const flight = 'LH234';
 const lingling = {
-    name: 'lingling Lee',
-    passport: 24739479284
-}
+  name: 'lingling Lee',
+  passport: 24739479284,
+};
 
 const checkIn = function (flightNum, passenger) {
-    flightNum = 'LH999';
-    passenger.NAME = 'Mrs.' + passenger.name;
+  flightNum = 'LH999';
+  passenger.NAME = 'Mrs.' + passenger.name;
 
-    if (passenger.passport === 24739479284) {
-        alert('Checked in')
-    } else {
-        alert('Wrong passport')
-    }
-}
+  if (passenger.passport === 24739479284) {
+    alert('Checked in');
+  } else {
+    alert('Wrong passport');
+  }
+};
 
-checkIn(flight, lingling);//primitive type reference type
+checkIn(flight, lingling); //primitive type reference type
 console.log(flight);
 console.log(lingling);
 
@@ -41,13 +41,13 @@ console.log(lingling);
 //when we pass object as function, it's like we just use the same object
 
 const newPassport = function (person) {
-    person.passport = Math.trunc(Math.random() * 10000000);
-}
+  person.passport = Math.trunc(Math.random() * 10000000);
+};
 
-newPassport(lingling)
-checkIn(flight,lingling)
+newPassport(lingling);
+checkIn(flight, lingling);
 
-// first- class function 
+// first- class function
 // javascript treats functions as first-class citzens
 //this means that funtcions are simply values
 //functions are just another type of object
@@ -67,30 +67,29 @@ checkIn(flight,lingling)
 // there is a practice for high-order functions because the langauge offers first-class functions
 
 const oneWord = function (str) {
-    return str.replace(/ /g, '').toLowerCase();
-}
+  return str.replace(/ /g, '').toLowerCase();
+};
 
 const upperFirstWord = function (str) {
-    const [first, ...others] = str.split(' ');
-    return [first.toUpperCase(), ...others].join(' ');
-}
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
 
 //higher-order function
 const transformer = function (str, fn) {
-    console.log(`Original string: ${str}`);
-    console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
 
-    console.log(`Transformed by: ${fn.name}`);
-
-}
+  console.log(`Transformed by: ${fn.name}`);
+};
 
 transformer('JavaScript is the best!', upperFirstWord);
 transformer('JavaScript is the best!', oneWord);
 
 // js uses callback all the time
 const high5 = function () {
-    console.log('👋');
-}
+  console.log('👋');
+};
 
 document.body.addEventListener('click', high5);
 //addeventlistener is a higher-order function
@@ -105,10 +104,10 @@ document.body.addEventListener('click', high5);
 // functions returning functions
 
 const greet = function (greeting) {
-    return function (name) {
-        console.log(`${greeting} ${name}`);
-    }
-}
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
 
 const greeterHey = greet('Hey');
 greeterHey('Lingling');
@@ -117,34 +116,34 @@ greeterHey('Orm');
 greet('Hello')('Lingling');
 
 //challenge
-const greetArr = greeting => name => console.log(`${greeting} ${name}`)
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 
-greetArr('Hi')('Lingling')
+greetArr('Hi')('Lingling');
 
 //set this keyword manually
 
 const lufthansa = {
-    airline: 'Lufthansa',
-    iataCode: 'LH',
-    bookings: [],
-    // book: function(){}
-    book(flightNum, name) {
-        console.log(
-            `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
-        );
-        this.bookings.push({flight: `${this.iataCode}${flightNum}`,name})
-    }
-}
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  // book: function(){}
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
 
 lufthansa.book(239, 'Lingling');
 lufthansa.book(635, 'Mint');
-console.log(lufthansa)
+console.log(lufthansa);
 
 const eurowings = {
-    airline: 'Eurowings',
-    iataCode: 'EW',
-    bookings: [],
-}
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
 
 const book = lufthansa.book;
 
@@ -155,19 +154,19 @@ const book = lufthansa.book;
 //call method
 // first one points to the object
 book.call(eurowings, 23, 'Yuuka');
-console.log(eurowings)
+console.log(eurowings);
 
 book.call(lufthansa, 239, 'Lingling');
-console.log(lufthansa)
+console.log(lufthansa);
 
 const swiss = {
-    airline: 'Swiss Air Lines',
-    iataCode: 'LX',
-    bookings: [],
-}
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
 
 book.call(swiss, 583, 'Mary Cooper');
-console.log(swiss)
+console.log(swiss);
 
 //apply method
 //apply method is similar to call method
@@ -175,7 +174,57 @@ console.log(swiss)
 // it's not used much in modern js
 const flightData = [583, 'George Cooper'];
 book.apply(swiss, flightData);
-console.log(swiss)
+console.log(swiss);
 
 book.call(swiss, ...flightData);
-console.log(swiss)
+console.log(swiss);
+
+//bind method
+//it doesn't immediately call the function.
+//instead it returns a new function where the this keyword is bound
+// book.call(eurowings, 23, 'Steven Williams');
+
+const bookEW = book.bind(eurowings);
+bookEW(23, 'Steven Williams');
+console.log(eurowings);
+
+const bookLH = book.bind(lufthansa);
+bookLH(239, 'Lingling');
+console.log(lufthansa);
+
+const bookLX = book.bind(swiss);
+
+//for call method, we have this keyword and the arguments
+
+const bookEW23 = book.bind(eurowings, 23); //pre-set the first argument
+bookEW23('Ling');
+console.log(eurowings);
+
+//with event listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// partial application
+
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(100));
+
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const addVAT2 = addTaxRate(0.23);
+console.log(addVAT2(100));
